@@ -7,15 +7,19 @@ desafios_mensais = {
     "feveiro": "jantar",
     "marco": "correr",
     "abril": "null",
-    "maio": "Django"
+    "maio": "Django",
+    "junho" : None
 }
 
 # Create your views here.
 
 
-def index(reques):
-    response_data = "<ul><li>Meuas</li></ul>"
-    return HttpResponse(response_data)
+def index(request):
+    mese = list(desafios_mensais.keys())
+    return render(request, "desafios/desafio.html", {
+        "meses": mese
+    })
+
 
 def desafios_number(request, mes):
     mes_numero = list(desafios_mensais.keys())
@@ -31,6 +35,9 @@ def desafios_number(request, mes):
 def desafios(request, mes):
     try:
         texto_desafio = desafios_mensais[mes]
-        return HttpResponse(texto_desafio)
+        return render(request, "desafios/mes.html", {
+            "text": texto_desafio,
+            "mes": mes,
+        })
     except:
         return HttpResponseNotFound("Mes nao existe")

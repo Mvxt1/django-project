@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Inicial</title>
+</head>
+<body>
+    <h1> Desafios mensais </h1>
+     <ul>
+        {% for mes in meses %}
+            <li><a href="{% url 'mes_letra' mes %}">{{mes}}</a></li>
+        {% endfor %}
+     </ul>
+</body>
+</html>
