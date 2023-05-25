@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
 
-desafios_mensais = {
+desafios_mensais = { 
     "janeiro": "Comer",
     "feveiro": "jantar",
     "marco": "correr",
@@ -10,7 +10,7 @@ desafios_mensais = {
     "maio": "Django",
     "junho" : None
 }
-
+ 
 # Create your views here.
 
 
